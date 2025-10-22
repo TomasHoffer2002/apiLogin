@@ -27,7 +27,7 @@ $usuario_form = $datos->usuario;
 $password_form = $datos->password;
 
 try {
-    $sql = "SELECT id, nombre, apellido, usuario, email, rol, contraseña FROM Usuarios WHERE usuario = :usuario";
+    $sql = "SELECT id, nombre, apellido, usuario, email, rol, passwordd FROM Usuarios WHERE usuario = :usuario";
     $stmt = $conexion->prepare($sql);
     $stmt->bindParam(':usuario', $usuario_form);
     $stmt->execute();
@@ -35,7 +35,7 @@ try {
     $usuario_db = $stmt->fetch(PDO::FETCH_ASSOC);
 
     // Esta función compara de forma segura la contraseña enviada con el HASH guardado
-    if ($usuario_db && password_verify($password_form, $usuario_db['contraseña'])) {
+    if ($usuario_db && password_verify($password_form, $usuario_db['passwordd'])) {
         
         $secret_key = "paraTokenLogin";
         $issuer_claim = "http://localhost";
