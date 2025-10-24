@@ -11,7 +11,7 @@ header("Content-Type: application/json; charset=UTF-8");
 // Datos de conexión a la base de datos
 $servidor = "localhost";
 $usuario_db = "root"; // Tu usuario de MySQL
-$contrasena_db = "tomas2025!"; // Tu contraseña de MySQL
+$contrasena_db = "universidad"; // Tu contraseña de MySQL
 $nombre_db = "museo"; // El nombre de tu base de datos
 
 try {
